@@ -3,13 +3,12 @@ package router
 import "github.com/gin-gonic/gin"
 
 func Initialize() {
+	// Creates a gin router with default middleware:
 	router := gin.Default()
 
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	// Define the routes
+	initializeRoutes(router)
 
+	// Define the routes
 	router.Run() // listen and serve on
 }
