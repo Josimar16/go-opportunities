@@ -48,3 +48,22 @@ func (r *CreateOpportunityRequest) Validate() error {
 
 	return nil
 }
+
+type UpdateOpportunityRequest struct {
+	Role     string `json:"role"`
+	Company  string `json:"company"`
+	Location string `json:"location"`
+	Remote   *bool  `json:"remote"`
+	Link     string `json:"link"`
+	Salary   int64  `json:"salary"`
+}
+
+func (r *UpdateOpportunityRequest) Validate() error {
+	// If any field is provider, validation is truthy
+	if r.Role != "" || r.Company != "" || r.Location != "" || r.Link != "" || r.Remote != nil || r.Salary > 0 {
+		return nil
+	}
+
+	// If none of the fields are provided, return error
+	return fmt.Errorf("at least one valid field is required")
+}
