@@ -6,6 +6,18 @@ import (
 	"net/http"
 )
 
+// @BasePath /api/v1
+
+// @Summary Create an opportunity
+// @Description Create an opportunity
+// @Tags opportunities
+// @Accept json
+// @Produce json
+// @Param opportunity body CreateOpportunityRequest true "Opportunity object"
+// @Success 201 {object} CreateOpportunityResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opportunities [post]
 func CreateOpportunitiesHandler(c *gin.Context) {
 	request := CreateOpportunityRequest{}
 

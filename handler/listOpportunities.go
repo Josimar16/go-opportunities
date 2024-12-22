@@ -6,6 +6,16 @@ import (
 	"net/http"
 )
 
+// @BasePath /api/v1
+
+// @Summary List opportunities
+// @Description List opportunities
+// @Tags opportunities
+// @Accept json
+// @Produce json
+// @Success 200 {object} ListOpportunityResponse
+// @Failure 500 {object} ErrorResponse
+// @Router /opportunities [get]
 func ListOpportunitiesHandler(c *gin.Context) {
 	opportunities := []schemas.Opportunity{}
 

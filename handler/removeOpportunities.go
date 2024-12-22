@@ -7,6 +7,18 @@ import (
 	"net/http"
 )
 
+// @BasePath /api/v1
+
+// @Summary Remove an opportunity
+// @Description Remove an opportunity
+// @Tags opportunities
+// @Accept json
+// @Produce json
+// @Param id path string true "Opportunity ID"
+// @Success 200 {object} RemoveOpportunityResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Router /opportunities/{id} [delete]
 func RemoveOpportunitiesHandler(c *gin.Context) {
 	id := c.Param("id")
 

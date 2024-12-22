@@ -7,6 +7,18 @@ import (
 	"net/http"
 )
 
+// @BasePath /api/v1
+
+// @Summary Show an opportunity
+// @Description Show an opportunity
+// @Tags opportunities
+// @Accept json
+// @Produce json
+// @Param id path string true "Opportunity ID"
+// @Success 200 {object} ShowOpportunityResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Router /opportunities/{id} [get]
 func ShowOpportunitiesHandler(c *gin.Context) {
 	id := c.Param("id")
 
